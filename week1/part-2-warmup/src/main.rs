@@ -7,15 +7,40 @@ fn main() {
 }
 
 fn add_n(v: Vec<i32>, n: i32) -> Vec<i32> {
-    unimplemented!()
+    //create new mutable vec to return
+    let mut new_vec: Vec<i32> = Vec::new();
+
+    for num in v.iter() {
+        new_vec.push(num + n);
+    }
+
+    //return the new vector
+    new_vec
+
 }
 
 fn add_n_inplace(v: &mut Vec<i32>, n: i32) {
-    unimplemented!()
+    for i in 0..v.len() {
+        v[i] += n;
+    }
+
 }
 
 fn dedup(v: &mut Vec<i32>) {
-    unimplemented!()
+    //create hashset to keep track of duplicates
+    let mut seen: HashSet<i32> = HashSet::new();
+    let mut i = 0;
+    while i < v.len() {
+        if seen.contains(&v[i]) {
+            //remove dup
+            v.remove(i);
+        } else {
+            //add it to list of seen values
+            seen.insert(v[i]);
+            i += 1;
+        }
+    }
+
 }
 
 #[cfg(test)]
