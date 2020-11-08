@@ -1,3 +1,3 @@
 fn main() {
-    println!("Eat shit and die.");
+    println!("rawr.");
 }
